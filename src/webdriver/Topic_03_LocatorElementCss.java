@@ -13,7 +13,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_02_Css {
+public class Topic_03_LocatorElementCss {
 	
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
@@ -39,7 +39,7 @@ public class Topic_02_Css {
 		assertEquals(driver.findElement(By.id("txtCPassword-error")).getText(), "Vui lòng nhập lại mật khẩu");
 		assertEquals(driver.findElement(By.id("txtPhone-error")).getText(), "Vui lòng nhập số điện thoại.");
 	}
-//test demo
+
 	
 	@Test
 	public void TC_02_RegisterEmailInvalid() {

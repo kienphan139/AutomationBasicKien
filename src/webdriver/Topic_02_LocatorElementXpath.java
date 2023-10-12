@@ -17,7 +17,7 @@ public class Topic_02_LocatorElementXpath {
 	
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
-	String osName = System.getProperty(projectPath);
+	String osName = System.getProperty("os.name");
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -27,7 +27,7 @@ public class Topic_02_LocatorElementXpath {
 		driver.manage().window().maximize();
 		
 	}
-	@Test(priority = 1)
+	@Test
 	public void TC_01_Registerwithemptydata() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 		driver.findElement(By.xpath("//div[@class='field_btn']//button[@type='submit']")).click();
@@ -38,7 +38,7 @@ public class Topic_02_LocatorElementXpath {
 		assertEquals(driver.findElement(By.xpath("//div[@class='form frmRegister']//label[@id='txtCPassword-error']")).getText(), "Vui lòng nhập lại mật khẩu");
 		assertEquals(driver.findElement(By.xpath("//div[@class='form frmRegister']//label[@id='txtPhone-error']")).getText(), "Vui lòng nhập số điện thoại.");
 	}
-	@Test(priority = 2)
+	@Test
 	public void TC_02_RegisterEmailInvalid() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 		driver.findElement(By.xpath("//input[@id='txtFirstname']")).sendKeys("Nguyễn Văn A");
@@ -51,7 +51,7 @@ public class Topic_02_LocatorElementXpath {
 		Assert.assertEquals(driver.findElement(By.xpath("//div[@class='form frmRegister']//label[@id='txtEmail-error']")).getText(), "Vui lòng nhập email hợp lệ");
 		Assert.assertEquals(driver.findElement(By.xpath("//div[@class='form frmRegister']//label[@id='txtCEmail-error']")).getText(), "Email nhập lại không đúng");			
 	}
-	@Test(priority = 3)
+	@Test
 	public void TC_03_RegisterPasswordWith6Character() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 		driver.findElement(By.xpath("//input[@id='txtFirstname']")).sendKeys("Nguyễn Văn A");
@@ -64,7 +64,7 @@ public class Topic_02_LocatorElementXpath {
 		assertEquals(driver.findElement(By.xpath("//div[@class='form frmRegister']//label[@id='txtPassword-error']")).getText(), "Mật khẩu phải có ít nhất 6 ký tự");
 		assertEquals(driver.findElement(By.xpath("//div[@class='form frmRegister']//label[@id='txtCPassword-error']")).getText(), "Mật khẩu phải có ít nhất 6 ký tự");			
 	}
-	@Test(priority = 4)
+	@Test
 	public void TC_04_RegisterIncorrectConfirmEmail() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 		driver.findElement(By.xpath("//input[@id='txtFirstname']")).sendKeys("Nguyễn Văn A");
@@ -76,7 +76,7 @@ public class Topic_02_LocatorElementXpath {
 		driver.findElement(By.xpath("//div[@class='field_btn']//button[@type='submit']")).click();
 		assertEquals(driver.findElement(By.xpath("//div[@class='form frmRegister']//label[@id='txtCEmail-error']")).getText(), "Email nhập lại không đúng");
 	}
-	@Test(priority = 5)
+	@Test
 	public void TC_05_RegisterIncorrectConfirmPassword() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 		driver.findElement(By.xpath("//input[@id='txtFirstname']")).sendKeys("Nguyễn Văn A");
@@ -88,7 +88,7 @@ public class Topic_02_LocatorElementXpath {
 		driver.findElement(By.xpath("//div[@class='field_btn']//button[@type='submit']")).click();
 		assertEquals(driver.findElement(By.xpath("//div[@class='form frmRegister']//label[@id='txtCPassword-error']")).getText(), "Mật khẩu bạn nhập không khớp");
 	}
-	@Test(priority = 6)
+	@Test
 	public void TC_06_RegisterInvalidPhone() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 		driver.findElement(By.xpath("//input[@id='txtFirstname']")).sendKeys("Nguyễn Văn A");

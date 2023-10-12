@@ -11,9 +11,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class Topic_01_Check_Environment {
+	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
-	private FirefoxDriver driver;
 
 	@BeforeClass
 	public void beforeClass() {
